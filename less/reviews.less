@@ -11,72 +11,212 @@
 
  /* ================ TABLE OF CONTENTS ================
 		
-		1. VARS
-		2. REVIEWS-BLOCK
-		3. CUSTOM-STYLE
+		1. VARS - typo, blocks, theme vars, turnoff elements
+		2. REVIEWS-BLOCK - basic style
+		3. CUSTOM-STYLE - your custom additional style
 
- =====================================================*/
+   =====================================================*/
 
 
 
 /* 1. $[VARS] variables for reviews
-  ================================================== */
+      all variables have @rev prefix
+================================================== */
 
-  // typography ============================
+  // TYPOGRAPHY --------------------------------------
   @rev-base-font-family: arial;
   @rev-base-font-size: 16px;
   @rev-base-line-height: 1.25em;
 
-  	// review
-  	@rev-review-date-color: #666;
+    	// review typo
+      @rev-date-color: #666;
 
+      // review author
+      @rev-author-color: #555;
+
+
+  // BLOCKS --------------------------------------
+  @rev-block-padding: 20px;
+  @rev-reviews-padding: 0;
+  @rev-space-gap: 10px;  
+
+      // single review
+      @rev-single-bgcolor: #f5f5ff;
+      @rev-single-padding: 20px;
+
+
+
+  // THEME VARIABLES --------------------------------------
+  
+      // default star rating theme
+      @rev-rating-theme: default; // values: default | blue
+
+  // TURN OFF ELEMENTS --------------------------------------
+
+      //enable disable elements
+      @rev-RATING: true;
+      @rev-AUTHOR: true;
+      @rev-DATE: true;
+
+
+  // methods for turning off elements
+  .rating-theme-init() when (@rev-rating-theme = default)
+  {
+    @rev-rating-start-img: "../images/star.gif";
+  }
+
+  .rating-theme-init() when (@rev-rating-theme = blue)
+  {
+    @rev-rating-start-img: "../images/star-blue.gif";
+  }
+
+  .rating-theme-init() when (@rev-RATING = false)
+  {    
+    .review-rating {
+      display: none;
+    }
+  } 
+
+  .rating-theme-init() when (@rev-AUTHOR = false)
+  {    
+    .review-author {
+      display: none;
+    }
+  }
+
+  .rating-theme-init() when (@rev-DATE = false)
+  {    
+    .review-date {
+      display: none;
+    }
+  }
+
+  // RUN THEME INIT METHOD
+  .rating-theme-init;
 
 
 /* 2. $[REVIEWS-BLOCK] basic style
-  ================================================== */
+================================================== */
 
-  .reviews-block {
-  	font: normal @rev-base-font-size~"/"@rev-base-line-height @rev-base-font-family;
+.reviews-block {
+ font: normal @rev-base-font-size~"/"@rev-base-line-height @rev-base-font-family;
+ padding: @rev-block-padding;
 
-  	/* $[MAIN-TITLE] */
-  	.main-title {
-  		font-weight: bold;
-  		font-size: @rev-base-font-size+10;
-  		line-height: @rev-base-line-height;
-  	} /* $[end-MAIN-TITLE] */
+ .main-title {
+  font-weight: bold;
+  font-size: @rev-base-font-size+10;
+  line-height: @rev-base-line-height;
+}
 
-  	.reviews {
-  		.single-review {
-  			.review-date {
-  				font-size: @rev-base-font-size - 4;
-  				color: @rev-review-date-color;
-  			}
-  		}
-  	}
+.reviews {
+  padding: @rev-reviews-padding;
+
+  .single-review {
+    margin-top: @rev-space-gap;
+    background-color: @rev-single-bgcolor;
+    padding: @rev-single-padding;
+
+    .review-summary {
+      font-weight: bold;
+    }
+
+    .review-author {
+      font-style: italic;
+      font-size: @rev-base-font-size - 2;
+      color: @rev-author-color;
+    }
+
+    .review-content {
+      padding: 5px 0 0 0;
+      font-size: @rev-base-font-size - 1;
+    }
+
+    .review-date {
+      font-size: @rev-base-font-size - 4;
+      color: @rev-date-color;
+    }
+
+    .review-rating {
+      overflow: hidden;
+
+      .rating-stars {
+        width: 80px;
+        height: 16px;
+        background-color: #f00;
+        background: url(@rev-rating-start-img);
+        border:0;
+        font: 0/0 a;
+        text-shadow: none;
+        color: transparent;
+        background-color: transparent;
+        position: relative;
+
+        span {
+          display: block;
+          background: url(@rev-rating-start-img) 0 -16px;
+          width: 0;
+          height: 100%;
+        }
+
+        &[data-rating="5"] span {
+          width: 16px * 5;
+        }
+        
+        &[data-rating="4"] span {
+          width: 16px * 4;
+        } 
+
+        &[data-rating="3"] span {
+          width: 16px * 3;
+        }
+
+        &[data-rating="2"] span {
+          width: 16px * 2;
+        }
+
+        &[data-rating="1"] span {
+          width: 16px * 1;
+        }
+
+      }
+    }
   }
- 
+}
+}
+
+/*  3. $[HELPER-CLASSES]
+================================================== */ 
+
+// strips background in reviews
+// add striped-bg class to reviews-block
+.reviews-block.striped-bg {
+  .reviews {
+    .single-review {
+      &:nth-child(2n) {
+        background-color: darken(@rev-single-bgcolor,2%);
+      }
+    }
+  }
+}
 
 /* 3. $[CUSTOM-STYLE] user custom style
-  ================================================== */
+================================================== */
 
-  .reviews-block {
-  	border:1px dashed #666;
 
-  	.reviews {
 
-  		.single-review {
-  		padding:10px;
-  		margin-top: 20px;
-  		background-color: #2be;
-  		&:nth-child(2n) {
-  			background-color: #09c;
-  		}
+/* 4. $[JQUERY-RATING] rating plugin styles
+================================================== */
+/* jQuery.Rating Plugin CSS - http://www.fyneworks.com/jquery/star-rating/ */
+div.rating-cancel,div.star-rating{float:left;width:17px;height:15px;text-indent:-999em;cursor:pointer;display:block;background:transparent;overflow:hidden}
+div.rating-cancel,div.rating-cancel a{background:url(../images/delete.gif) no-repeat 0 -16px}
+div.star-rating,div.star-rating a{background:url(@rev-rating-start-img) no-repeat 0 0px}
+div.rating-cancel a,div.star-rating a{display:block;width:16px;height:100%;background-position:0 0px;border:0}
+div.star-rating-on a{background-position:0 -16px!important}
+div.star-rating-hover a{background-position:0 -32px}
+/* Read Only CSS */
+div.star-rating-readonly a{cursor:default !important}
+/* Partial Star CSS */
+div.star-rating{background:transparent!important;overflow:hidden!important}
 
-  		&:first-child {
-  			margin-top: 30px;
-  		}
-  	}
-  	}
-
-  }
-
+div.rating-cancel {display: none !important;}
+/* END jQuery.Rating Plugin CSS */
