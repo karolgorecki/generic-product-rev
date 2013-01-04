@@ -9,4 +9,74 @@
  *
  */
 
+ /* ================ TABLE OF CONTENTS ================
+		
+		1. VARS
+		2. REVIEWS-BLOCK
+		3. CUSTOM-STYLE
+
+ =====================================================*/
+
+
+
+/* 1. $[VARS] variables for reviews
+  ================================================== */
+
+  // typography ============================
+  @rev-base-font-family: arial;
+  @rev-base-font-size: 16px;
+  @rev-base-line-height: 1.25em;
+
+  	// review
+  	@rev-review-date-color: #666;
+
+
+
+/* 2. $[REVIEWS-BLOCK] basic style
+  ================================================== */
+
+  .reviews-block {
+  	font: normal @rev-base-font-size~"/"@rev-base-line-height @rev-base-font-family;
+
+  	/* $[MAIN-TITLE] */
+  	.main-title {
+  		font-weight: bold;
+  		font-size: @rev-base-font-size+10;
+  		line-height: @rev-base-line-height;
+  	} /* $[end-MAIN-TITLE] */
+
+  	.reviews {
+  		.single-review {
+  			.review-date {
+  				font-size: @rev-base-font-size - 4;
+  				color: @rev-review-date-color;
+  			}
+  		}
+  	}
+  }
  
+
+/* 3. $[CUSTOM-STYLE] user custom style
+  ================================================== */
+
+  .reviews-block {
+  	border:1px dashed #666;
+
+  	.reviews {
+
+  		.single-review {
+  		padding:10px;
+  		margin-top: 20px;
+  		background-color: #2be;
+  		&:nth-child(2n) {
+  			background-color: #09c;
+  		}
+
+  		&:first-child {
+  			margin-top: 30px;
+  		}
+  	}
+  	}
+
+  }
+
