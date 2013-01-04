@@ -28,11 +28,17 @@
   @rev-base-font-size: 16px;
   @rev-base-line-height: 1.25em;
 
+      // main-title
+      @rev-main-title-color: #444;
+
     	// review typo
       @rev-date-color: #666;
 
       // review author
       @rev-author-color: #555;
+
+      // review summary
+      @rev-summary-color: #556677;
 
 
   // BLOCKS --------------------------------------
@@ -41,12 +47,12 @@
   @rev-space-gap: 10px;  
 
       // single review
-      @rev-single-bgcolor: #f5f5ff;
+      @rev-single-bgcolor: #f5faff;
       @rev-single-padding: 20px;
+      @rev-single-striped-power: 3%;
 
         // review content
         @rev-content-max-width: 100%;
-
 
 
   // THEME VARIABLES --------------------------------------
@@ -125,6 +131,7 @@
   font-weight: bold;
   font-size: @rev-base-font-size+10;
   line-height: @rev-base-line-height;
+  color: @rev-main-title-color;
 }
 
 .reviews {
@@ -137,6 +144,7 @@
 
     .review-summary {
       font-weight: bold;
+      color: @rev-summary-color;
     }
 
     .review-author {
@@ -213,7 +221,7 @@
   .reviews {
     .single-review {
       &:nth-child(2n) {
-        background-color: darken(@rev-single-bgcolor,2%);
+        background-color: darken(@rev-single-bgcolor,@rev-single-striped-power);
       }
     }
   }
