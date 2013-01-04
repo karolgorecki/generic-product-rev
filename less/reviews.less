@@ -44,6 +44,9 @@
       @rev-single-bgcolor: #f5f5ff;
       @rev-single-padding: 20px;
 
+        // review content
+        @rev-content-max-width: 100%;
+
 
 
   // THEME VARIABLES --------------------------------------
@@ -54,9 +57,11 @@
   // TURN OFF ELEMENTS --------------------------------------
 
       //enable disable elements
-      @rev-RATING: true;
+      @rev-SUMMARY: true;
       @rev-AUTHOR: true;
+      @rev-CONTENT: true;
       @rev-DATE: true;
+      @rev-RATING: true;
 
 
   // methods for turning off elements
@@ -69,6 +74,20 @@
   {
     @rev-rating-start-img: "../images/star-blue.gif";
   }
+
+  .rating-theme-init() when (@rev-SUMMARY = false)
+  {    
+    .review-summary {
+      display: none;
+    }
+  } 
+
+  .rating-theme-init() when (@rev-CONTENT = false)
+  {    
+    .review-content {
+      display: none;
+    }
+  } 
 
   .rating-theme-init() when (@rev-RATING = false)
   {    
@@ -129,6 +148,7 @@
     .review-content {
       padding: 5px 0 0 0;
       font-size: @rev-base-font-size - 1;
+      max-width: @rev-content-max-width;
     }
 
     .review-date {
