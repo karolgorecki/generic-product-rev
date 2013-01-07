@@ -9,22 +9,22 @@
  *
  */
 
- /* ================ TABLE OF CONTENTS ================
+ /* ================ TABLE OF CONTENTS ===============
 		
 		1. VARS - typo, blocks, theme vars, turnoff elements
     2. REVIEWS-BLOCK - basic style
-		3. HELPER-CLASSES - helper and common classes
-    4. CUSTOM-STYLE - see reviews-custom.less
-		5. JQUERY-RATING - styles for rating
+		3. RATING-BLOCK - rating form styles
+    4. HELPER-CLASSES - helper and common classes
+    5. CUSTOM-STYLE - see reviews-custom.less
+		6. JQUERY-RATING - styles for rating
 
-   =====================================================*/
+ ===================================================== */
 
 
-
-/* 1. $[VARS] variables for reviews
-      all variables have @rev prefix
-      ================================================== */
-
+/* ===============================================
+    1. $[VARS] variables for reviews
+================================================== */
+  // all variables have @rev prefix
 
   // TYPOGRAPHY --------------------------------------
   @rev-base-font-family: arial;
@@ -43,7 +43,15 @@
       // review summary
       @rev-summary-color: #666;
 
-      //numbering 
+      // numbering 
+
+      // rate form sub title
+      @rev-sub-title-color:  lighten(@rev-main-title-color,40%);
+
+      // rate labels 
+      @rev-rate-label-color: @rev-summary-color;
+      @rev-required-color: #d33;
+      @rev-rate-label-font: bold @rev-base-font-size - 3 ~"/"@rev-base-line-height + .15 @rev-base-font-family;
 
 
   // BLOCKS --------------------------------------
@@ -64,6 +72,9 @@
         @rev-numbering-bgcolor: #fff;
         @rev-numbering-color: #e0e0e0;
 
+        // rate
+        @rev-rate-top-spacing: 20px;
+
 
   // THEME VARIABLES --------------------------------------
   
@@ -74,11 +85,11 @@
   // TURN OFF ELEMENTS --------------------------------------
 
       //enable disable elements
-        @rev-SUMMARY: true;
-         @rev-AUTHOR: true;
-        @rev-CONTENT: true;
-           @rev-DATE: true;
-         @rev-RATING: true;
+      @rev-SUMMARY: true;
+      @rev-AUTHOR: true;
+      @rev-CONTENT: true;
+      @rev-DATE: true;
+      @rev-RATING: true;
       @rev-NUMBERING: true;
 
   // methods for turning off elements
@@ -140,7 +151,8 @@
 
 
 
-/* 2. $[REVIEWS-BLOCK] basic style
+/* =============================================== 
+    2. $[REVIEWS-BLOCK] basic style
 ================================================== */
 
 .reviews-block {
@@ -254,7 +266,112 @@
 
 
 
-/*  3. $[HELPER-CLASSES]
+/* =============================================== 
+    3. $[RATING-BLOCK]
+================================================== */
+.rating-block {
+ font: normal @rev-base-font-size~"/"@rev-base-line-height @rev-base-font-family;
+ padding: @rev-block-padding;
+
+ .main-title {
+  font-weight: bold;
+  font-size: @rev-base-font-size+10;
+  line-height: @rev-base-line-height;
+  color: @rev-main-title-color;
+}
+
+.sub-title {
+  font-size: @rev-base-font-size+1;
+  line-height: @rev-base-line-height - .25;
+  color: @rev-sub-title-color;
+}
+
+form {
+  padding: 20px 0;
+
+  &>ul {
+    list-style:none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      padding-top: @rev-rate-top-spacing;
+      .clearfix;
+    }
+  }
+}
+
+label {
+  display: block;
+}
+
+input, textarea {
+  font-size: @rev-base-font-size - 3;
+  color: #666;
+  display: block;
+  .box-shadow(inset 0px 3px 7px rgba(0,0,0,.15));
+  border: 1px solid @rev-single-bgcolor;
+  padding: 10px;
+  background-color: #f5f5f5;
+
+  &.xsmall {
+
+  }
+  &.small {
+
+  }
+  &.medium {
+
+  }
+  &.large {
+        width: 280px;
+    max-width: 100%;
+  }
+  &.xlarge {
+
+  }
+}
+
+textarea {
+  &.large {
+    min-height:200px;
+  }
+}
+
+.rating-box-label {
+  float: left;
+}
+
+.rating-box {
+  overflow: hidden;
+  float: left;
+  margin-left: 5px;
+}
+
+.rate-label, .rating-box-label {
+  font: @rev-rate-label-font;
+  color: @rev-rate-label-color;
+
+
+  &.required {
+    &:before {
+      display: inline-block;
+      padding: 0 2px 0 0;
+      content: '*';
+      color: @rev-required-color;
+      font-weight: bold;
+    }
+  }
+
+
+}
+
+}
+
+
+
+/* ===============================================
+    4. $[HELPER-CLASSES]
 ================================================== */ 
 
 // strips background in reviews
@@ -271,15 +388,16 @@
 
 
 
-/* 4. $[CUSTOM-STYLE] user custom style
+/* ===============================================
+    5. $[CUSTOM-STYLE] user custom style
 ================================================== */
 // add your style in reviews-custom.less
 
 
 
-/* 5. $[JQUERY-RATING] rating plugin styles
+/* ===============================================
+    6. $[JQUERY-RATING] rating plugin styles
 ================================================== */
-/* jQuery.Rating Plugin CSS - http://www.fyneworks.com/jquery/star-rating/ */
 div.rating-cancel,div.star-rating{float:left;width:17px;height:15px;text-indent:-999em;cursor:pointer;display:block;background:transparent;overflow:hidden}
 div.rating-cancel,div.rating-cancel a{background:url(../images/delete.gif) no-repeat 0 -16px}
 div.star-rating,div.star-rating a{background:url(@rev-rating-start-img) no-repeat 0 0px}
