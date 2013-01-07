@@ -31,6 +31,8 @@
   @rev-base-font-size: 16px;
   @rev-base-line-height: 1.25em;
 
+  // reviews section ------------------------
+
       // main-title
       @rev-main-title-color: #444;
 
@@ -45,19 +47,33 @@
 
       // numbering 
 
+
+  // rating section ------------------------
+
       // rate form sub title
       @rev-sub-title-color:  lighten(@rev-main-title-color,40%);
+
+      // rate heading
+      @rev-rating-heading-font: bold @rev-base-font-size @rev-base-font-family;
+      @rev-rating-heading-color: #555;
 
       // rate labels 
       @rev-rate-label-color: @rev-summary-color;
       @rev-required-color: #d33;
       @rev-rate-label-font: bold @rev-base-font-size - 3 ~"/"@rev-base-line-height + .15 @rev-base-font-family;
 
+      // rating submit button
+      @rev-rating-submit-btn-font: bold 13px arial;
+
+      // input / textarea
+      @rev-input-font-family: @rev-base-font-family;
 
   // BLOCKS --------------------------------------
   @rev-block-padding: 20px;
   @rev-reviews-padding: 0;
   @rev-space-gap: 10px;  
+
+    // reviews section ------------------------
 
       // single review
       @rev-single-bgcolor: #f8f8f8;
@@ -72,8 +88,17 @@
         @rev-numbering-bgcolor: #fff;
         @rev-numbering-color: #e0e0e0;
 
+
+    // rating section ------------------------   
+
         // rate
         @rev-rate-top-spacing: 20px;
+        @rev-rate-input-padding: 7px 10px;
+        @rev-rate-textarea-padding: 10px;
+        @rev-rate-input-color: #555;
+        @rev-rate-input-box-shadow: inset 0px 3px 5px rgba(0,0,0,.15);
+        @rev-rate-bgcolor: #f9f9f9;
+        @rev-rate-input-border: 1px solid #ccc;
 
 
   // THEME VARIABLES --------------------------------------
@@ -306,13 +331,14 @@ label {
 }
 
 input, textarea {
+  font-family: @rev-input-font-family;
   font-size: @rev-base-font-size - 3;
-  color: #666;
+  color: @rev-rate-input-color;
   display: block;
-  .box-shadow(inset 0px 3px 7px rgba(0,0,0,.15));
-  border: 1px solid @rev-single-bgcolor;
-  padding: 10px;
-  background-color: #f5f5f5;
+  .box-shadow(@rev-rate-input-box-shadow);
+  border: @rev-rate-input-border;
+  background-color: @rev-rate-bgcolor;
+  #gradient > .vertical(darken(@rev-rate-bgcolor,3%),@rev-rate-bgcolor);
 
   &.xsmall {
 
@@ -332,20 +358,33 @@ input, textarea {
   }
 }
 
+input {
+  padding: @rev-rate-input-padding;
+}
+
 textarea {
+  padding: @rev-rate-textarea-padding;
   &.large {
     min-height:200px;
   }
 }
 
 .rating-box-label {
-  float: left;
+  display: inline;
+  vertical-align: baseline;
 }
 
 .rating-box {
   overflow: hidden;
-  float: left;
+  display: inline-block;
+  vertical-align: baseline;
   margin-left: 5px;
+}
+
+.rating-heading {
+  font: @rev-rating-heading-font;
+  color: @rev-rating-heading-color;
+  margin-bottom: 5px;
 }
 
 .rate-label, .rating-box-label {
@@ -363,6 +402,14 @@ textarea {
     }
   }
 
+
+}
+
+.rating-submit-btn {
+padding: 5px 15px;
+background: #888;
+font: @rev-rating-submit-btn-font;
+color: #fff;
 
 }
 

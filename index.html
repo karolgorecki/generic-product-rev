@@ -39,13 +39,11 @@
 					<div class="main-title">Reviews block</div>
 					
 					<!-- $[REVIEWS] -->
-
 					<div class="reviews" itemscope itemtype="http://schema.org/Product">
-						<meta itemprop="description" content="Some product description" />
 						<meta itemprop="name" content="Product Name" />
 						<div itemprop="aggregateRating"
 						itemscope itemtype="http://schema.org/AggregateRating">
-						<meta itemprop="ratingValue" content="4" />
+						<meta itemprop="ratingValue" content="4.5" />
 						<meta itemprop="reviewCount" content="23">
 						<meta itemprop="bestRating" content="5" />
 					</div>
@@ -70,7 +68,11 @@
 			</div><!-- $[end-REVIEWS-BLOCK] -->
 		</div>
 	</div>
+</div>
 
+<div style="background:#ddd;width:100%;height:1px;margin:60px 0 30px 0;"></div>
+
+<div class="container">
 	<div class="row">
 		<div class="span12"><h1>Rating Form</h1></div>
 	</div>
@@ -81,20 +83,8 @@
 				<div class="sub-title">you're reviewing Product Name</div>
 				<form>
 					<ul>
-						<li>							
-							<label class="rate-label required" for="nickname">Nickname</label>
-							<input id="nickname" type="text" placeholder="Nickname..." name="nickname">
-						</li>
 						<li>
-							<label class="rate-label required" for="summary">Summary of Your Review</label>
-							<input id="summary" class="large" type="text" placeholder="Summary of Your Review..." name="summary">
-						</li>
-						<li>
-							<label class="rate-label" for="rev-content">Review</label>
-							<textarea class="large" id="rev-content" type="text" placeholder="Summary of Your Review..." name="rev-content">
-							</textarea>
-						</li>
-						<li>
+							<div class="rating-heading">How do You rate this product?</div>
 							<div class="rating-box-label">Your rating:</div>
 							<div class="rating-box">
 								<input name="star1" type="radio" title="Worst" value="1" class="star"/>
@@ -105,9 +95,21 @@
 							</div>
 
 						</li>
+						<li>							
+							<label class="rate-label required" for="nickname">Nickname</label>
+							<input id="nickname" type="text" placeholder="Nickname..." name="nickname">
+						</li>
 
 						<li>
-							<button type="submit" class="btn">Submit</button>
+							<label class="rate-label required" for="summary">Summary of Your Review</label>
+							<input id="summary" class="large" type="text" placeholder="Summary of Your Review..." name="summary">
+						</li>
+						<li>
+							<label class="rate-label" for="rev-content">Review</label>
+							<textarea class="large" id="rev-content" type="text" placeholder="Summary of Your Review..." name="rev-content"></textarea>
+						</li>
+						<li>
+							<button type="submit" class="rating-submit-btn">Add Your Rating</button>
 						</li>
 					</ul>
 
