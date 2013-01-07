@@ -13,7 +13,7 @@
 		
 		1. VARS - typo, blocks, theme vars, turnoff elements
 		2. REVIEWS-BLOCK - basic style
-		3. CUSTOM-STYLE - your custom additional style
+		3. CUSTOM-STYLE - see reviews-custom.less
 
    =====================================================*/
 
@@ -21,7 +21,8 @@
 
 /* 1. $[VARS] variables for reviews
       all variables have @rev prefix
-================================================== */
+      ================================================== */
+
 
   // TYPOGRAPHY --------------------------------------
   @rev-base-font-family: arial;
@@ -38,7 +39,9 @@
       @rev-author-color: #555;
 
       // review summary
-      @rev-summary-color: #556677;
+      @rev-summary-color: #666;
+
+      //numbering 
 
 
   // BLOCKS --------------------------------------
@@ -47,12 +50,17 @@
   @rev-space-gap: 10px;  
 
       // single review
-      @rev-single-bgcolor: #f5faff;
+      @rev-single-bgcolor: #f8f8f8;
       @rev-single-padding: 20px;
       @rev-single-striped-power: 3%;
 
         // review content
         @rev-content-max-width: 100%;
+
+        // numbering
+        @rev-numbering-size: 32px;
+        @rev-numbering-bgcolor: #fff;
+        @rev-numbering-color: #e0e0e0;
 
 
   // THEME VARIABLES --------------------------------------
@@ -60,15 +68,16 @@
       // default star rating theme
       @rev-rating-theme: default; // values: default | blue
 
+
   // TURN OFF ELEMENTS --------------------------------------
 
       //enable disable elements
-      @rev-SUMMARY: true;
-      @rev-AUTHOR: true;
-      @rev-CONTENT: true;
-      @rev-DATE: true;
-      @rev-RATING: true;
-
+        @rev-SUMMARY: true;
+         @rev-AUTHOR: true;
+        @rev-CONTENT: true;
+           @rev-DATE: true;
+         @rev-RATING: true;
+      @rev-NUMBERING: true;
 
   // methods for turning off elements
   .rating-theme-init() when (@rev-rating-theme = default)
@@ -116,8 +125,17 @@
     }
   }
 
+  .rating-theme-init() when (@rev-NUMBERING = false)
+  {    
+    body .reviews-block .reviews .single-review:after {
+      display: none;
+    }
+  }
+
+
   // RUN THEME INIT METHOD
   .rating-theme-init;
+
 
 
 /* 2. $[REVIEWS-BLOCK] basic style
@@ -141,6 +159,27 @@
     margin-top: @rev-space-gap;
     background-color: @rev-single-bgcolor;
     padding: @rev-single-padding;
+    position: relative;
+    counter-increment: reviews-no;
+
+    // numbering counter
+    &:after {
+      display: block;
+      content: counter(reviews-no);
+      position: absolute;
+      font-weight: bold;
+      top: 0;
+      right: 0;
+      width: @rev-numbering-size;
+      height: @rev-numbering-size;
+      background-color: @rev-main-title-color;
+      .border-radius(0 0 0 50%);
+      line-height: @rev-numbering-size;
+      text-align: center;
+      color: @rev-numbering-color;
+      background-color: @rev-numbering-bgcolor;
+
+    }
 
     .review-summary {
       font-weight: bold;
@@ -205,12 +244,13 @@
         &[data-rating="1"] span {
           width: 16px * 1;
         }
-
       }
     }
   }
 }
 }
+
+
 
 /*  3. $[HELPER-CLASSES]
 ================================================== */ 
@@ -227,8 +267,11 @@
   }
 }
 
+
+
 /* 3. $[CUSTOM-STYLE] user custom style
 ================================================== */
+// add your style in reviews-custom.less
 
 
 
