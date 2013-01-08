@@ -22,6 +22,8 @@
     </head>
     <body>
     	<div class="container">
+    		<a href="#" class="toggler">display-column</a>
+    		<a href="#" class="toggler">striped-bg</a>
     		<div class="row">
     			<div class="span12"><h1>Generic product reviews &amp; rating</h1></div>
     		</div>
@@ -63,6 +65,80 @@
 						</div>
 					</div><!-- end single review -->
 
+
+					<!-- single review -->
+					<div class="single-review" itemprop="review" itemscope itemtype="http://schema.org/Review">
+						<div class="review-summary" itemprop="name">I Feel Very Protected and Secure</div>
+						<div class="review-author" itemprop="author">by John Doe</div>
+						<div class="review-content" itemprop="description">I am very happy that I have chosen Kaspersky for my virus protection software! My previous software was up for renewal and therefore it was perfect timing to switch to Kaspersky, I'm glad I did! 
+						</div>
+						<div class="review-date"><meta itemprop="datePublished" content="2013-01-04" />posted on 2013-01-04</div>
+						<div class="review-rating" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+							<meta itemprop="worstRating" content="1" />
+							<div class="rating-stars" data-rating="2"><span itemprop="ratingValue">2</span></div>
+							<meta itemprop="bestRating" content="5" />
+						</div>
+					</div><!-- end single review -->
+
+
+					<!-- single review -->
+					<div class="single-review" itemprop="review" itemscope itemtype="http://schema.org/Review">
+						<div class="review-summary" itemprop="name">I Feel Very Protected and Secure</div>
+						<div class="review-author" itemprop="author">by John Doe</div>
+						<div class="review-content" itemprop="description">I am very happy that I have chosen Kaspersky for my virus protection software! My previous software was up for renewal and therefore it was perfect timing to switch to Kaspersky, I'm glad I did!
+						</div>
+						<div class="review-date"><meta itemprop="datePublished" content="2013-01-04" />posted on 2013-01-04</div>
+						<div class="review-rating" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+							<meta itemprop="worstRating" content="1" />
+							<div class="rating-stars" data-rating="2"><span itemprop="ratingValue">2</span></div>
+							<meta itemprop="bestRating" content="5" />
+						</div>
+					</div><!-- end single review -->
+
+
+					<!-- single review -->
+					<div class="single-review" itemprop="review" itemscope itemtype="http://schema.org/Review">
+						<div class="review-summary" itemprop="name">I Feel Very Protected and Secure</div>
+						<div class="review-author" itemprop="author">by John Doe</div>
+						<div class="review-content" itemprop="description">I am very happy that I have chosen Kaspersky for my virus protection software! My previous software was up for renewal and therefore it was perfect timing to switch to Kaspersky, I'm glad I did!
+						</div>
+						<div class="review-date"><meta itemprop="datePublished" content="2013-01-04" />posted on 2013-01-04</div>
+						<div class="review-rating" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+							<meta itemprop="worstRating" content="1" />
+							<div class="rating-stars" data-rating="2"><span itemprop="ratingValue">2</span></div>
+							<meta itemprop="bestRating" content="5" />
+						</div>
+					</div><!-- end single review -->
+
+
+					<!-- single review -->
+					<div class="single-review" itemprop="review" itemscope itemtype="http://schema.org/Review">
+						<div class="review-summary" itemprop="name">I Feel Very Protected and Secure</div>
+						<div class="review-author" itemprop="author">by John Doe</div>
+						<div class="review-content" itemprop="description">I am very happy that I have chosen Kaspersky for my virus protection software! My previous software was up for renewal and therefore it was perfect timing to switch to Kaspersky, I'm glad I did!
+						</div>
+						<div class="review-date"><meta itemprop="datePublished" content="2013-01-04" />posted on 2013-01-04</div>
+						<div class="review-rating" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+							<meta itemprop="worstRating" content="1" />
+							<div class="rating-stars" data-rating="2"><span itemprop="ratingValue">2</span></div>
+							<meta itemprop="bestRating" content="5" />
+						</div>
+					</div><!-- end single review -->
+
+
+					<!-- single review -->
+					<div class="single-review" itemprop="review" itemscope itemtype="http://schema.org/Review">
+						<div class="review-summary" itemprop="name">I Feel Very Protected and Secure</div>
+						<div class="review-author" itemprop="author">by John Doe</div>
+						<div class="review-content" itemprop="description">I am very happy that I have chosen Kaspersky for my virus protection software! My previous software was up for renewal and therefore it was perfect timing to switch to Kaspersky, I'm glad I did!
+						</div>
+						<div class="review-date"><meta itemprop="datePublished" content="2013-01-04" />posted on 2013-01-04</div>
+						<div class="review-rating" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+							<meta itemprop="worstRating" content="1" />
+							<div class="rating-stars" data-rating="2"><span itemprop="ratingValue">2</span></div>
+							<meta itemprop="bestRating" content="5" />
+						</div>
+					</div><!-- end single review -->
 				</div><!-- $[end-REVIEWS] -->
 
 			</div><!-- $[end-REVIEWS-BLOCK] -->
@@ -122,6 +198,14 @@
 		</div>
 	</div>
 </div>
+<script type="text/javascript">
+(function(){
+	$('.toggler').on('click',function(){
+		$(".reviews-block").toggleClass($(this).text());
 
+	});
+
+})();
+</script>
 </body>
 </html>

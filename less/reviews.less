@@ -18,12 +18,12 @@
     5. CUSTOM-STYLE - see reviews-custom.less
 		6. JQUERY-RATING - styles for rating
 
- ===================================================== */
+   ===================================================== */
 
 
 /* ===============================================
     1. $[VARS] variables for reviews
-================================================== */
+    ================================================== */
   // all variables have @rev prefix
 
   // TYPOGRAPHY --------------------------------------
@@ -44,8 +44,6 @@
 
       // review summary
       @rev-summary-color: #666;
-
-      // numbering 
 
 
   // rating section ------------------------
@@ -99,6 +97,12 @@
         @rev-rate-input-box-shadow: inset 0px 1px 2px rgba(0,0,0,.15);
         @rev-rate-bgcolor: #f9f9f9;
         @rev-rate-input-border: 1px solid #ccc;
+
+        // submit button
+        @rev-rating-submit-btn-border: 1px solid lighten(@rev-rating-submit-btn-bg,10%);
+        @rev-rating-submit-btn-bg: #888;
+        @rev-rating-submit-btn-color: #fff;
+        @rev-rating-submit-btn-bshadow: ~"inset 0 -2px 0 rgba(0,0,0,.5), inset 0 -3px 2px -1px rgba(255,255,255,.8)";
 
 
   // THEME VARIABLES --------------------------------------
@@ -178,28 +182,28 @@
 
 /* =============================================== 
     2. $[REVIEWS-BLOCK] basic style
-================================================== */
+    ================================================== */
 
-.reviews-block {
- font: normal @rev-base-font-size~"/"@rev-base-line-height @rev-base-font-family;
- padding: @rev-block-padding;
+    .reviews-block {
+     font: normal @rev-base-font-size~"/"@rev-base-line-height @rev-base-font-family;
+     padding: @rev-block-padding;
 
- .main-title {
-  font-weight: bold;
-  font-size: @rev-base-font-size+10;
-  line-height: @rev-base-line-height;
-  color: @rev-main-title-color;
-}
+     .main-title {
+      font-weight: bold;
+      font-size: @rev-base-font-size+10;
+      line-height: @rev-base-line-height;
+      color: @rev-main-title-color;
+    }
 
-.reviews {
-  padding: @rev-reviews-padding;
+    .reviews {
+      padding: @rev-reviews-padding;
 
-  .single-review {
-    margin-top: @rev-space-gap;
-    background-color: @rev-single-bgcolor;
-    padding: @rev-single-padding;
-    position: relative;
-    counter-increment: reviews-no;
+      .single-review {
+        margin-top: @rev-space-gap;
+        background-color: @rev-single-bgcolor;
+        padding: @rev-single-padding;
+        position: relative;
+        counter-increment: reviews-no;
 
     // numbering counter
     &:after {
@@ -293,168 +297,195 @@
 
 /* =============================================== 
     3. $[RATING-BLOCK]
-================================================== */
-.rating-block {
- font: normal @rev-base-font-size~"/"@rev-base-line-height @rev-base-font-family;
- padding: @rev-block-padding;
+    ================================================== */
+    .rating-block {
+     font: normal @rev-base-font-size~"/"@rev-base-line-height @rev-base-font-family;
+     padding: @rev-block-padding;
 
- .main-title {
-  font-weight: bold;
-  font-size: @rev-base-font-size+10;
-  line-height: @rev-base-line-height;
-  color: @rev-main-title-color;
-}
-
-.sub-title {
-  font-size: @rev-base-font-size+1;
-  line-height: @rev-base-line-height - .25;
-  color: @rev-sub-title-color;
-}
-
-form {
-  padding: 20px 0;
-
-  &>ul {
-    list-style:none;
-    margin: 0;
-    padding: 0;
-
-    li {
-      padding-top: @rev-rate-top-spacing;
-      .clearfix;
-    }
-  }
-}
-
-label {
-  display: block;
-}
-
-input, textarea {
-  font-family: @rev-input-font-family;
-  font-size: @rev-base-font-size - 3;
-  color: @rev-rate-input-color;
-  display: block;
-  .box-shadow(@rev-rate-input-box-shadow);
-  border: @rev-rate-input-border;
-  background-color: @rev-rate-bgcolor;
-  #gradient > .vertical(darken(@rev-rate-bgcolor,3%),@rev-rate-bgcolor);
-
-  &.xsmall {
-
-  }
-  &.small {
-
-  }
-  &.medium {
-
-  }
-  &.large {
-        width: 280px;
-    max-width: 100%;
-  }
-  &.xlarge {
-
-  }
-}
-
-input {
-  padding: @rev-rate-input-padding;
-}
-
-textarea {
-  padding: @rev-rate-textarea-padding;
-  &.large {
-    min-height:200px;
-  }
-}
-
-.rating-box-label {
-  display: inline;
-  vertical-align: baseline;
-}
-
-.rating-box {
-  overflow: hidden;
-  display: inline-block;
-  vertical-align: baseline;
-  margin-left: 5px;
-}
-
-.rating-heading {
-  font: @rev-rating-heading-font;
-  color: @rev-rating-heading-color;
-  margin-bottom: 5px;
-}
-
-.rate-label, .rating-box-label {
-  font: @rev-rate-label-font;
-  color: @rev-rate-label-color;
-
-
-  &.required {
-    &:before {
-      display: inline-block;
-      padding: 0 2px 0 0;
-      content: '*';
-      color: @rev-required-color;
+     .main-title {
       font-weight: bold;
+      font-size: @rev-base-font-size+10;
+      line-height: @rev-base-line-height;
+      color: @rev-main-title-color;
     }
+
+    .sub-title {
+      font-size: @rev-base-font-size+1;
+      line-height: @rev-base-line-height - .25;
+      color: @rev-sub-title-color;
+    }
+
+    form {
+      padding: 20px 0;
+
+      &>ul {
+        list-style:none;
+        margin: 0;
+        padding: 0;
+
+        li {
+          padding-top: @rev-rate-top-spacing;
+          .clearfix;
+        }
+      }
+    }
+
+    label {
+      display: block;
+    }
+
+    input, textarea {
+      font-family: @rev-input-font-family;
+      font-size: @rev-base-font-size - 3;
+      color: @rev-rate-input-color;
+      display: block;
+      .box-shadow(@rev-rate-input-box-shadow);
+      border: @rev-rate-input-border;
+      background-color: @rev-rate-bgcolor;
+      #gradient > .vertical(darken(@rev-rate-bgcolor,3%),@rev-rate-bgcolor);
+
+      &.xsmall {
+
+      }
+      &.small {
+
+      }
+      &.medium {
+
+      }
+      &.large {
+        width: 280px;
+        max-width: 100%;
+      }
+      &.xlarge {
+
+      }
+    }
+
+    input {
+      padding: @rev-rate-input-padding;
+    }
+
+    textarea {
+      padding: @rev-rate-textarea-padding;
+      &.large {
+        min-height:200px;
+      }
+    }
+
+    .rating-box-label {
+      display: inline;
+      vertical-align: baseline;
+    }
+
+    .rating-box {
+      overflow: hidden;
+      display: inline-block;
+      vertical-align: baseline;
+      margin-left: 5px;
+    }
+
+    .rating-heading {
+      font: @rev-rating-heading-font;
+      color: @rev-rating-heading-color;
+      margin-bottom: 5px;
+    }
+
+    .rate-label, .rating-box-label {
+      font: @rev-rate-label-font;
+      color: @rev-rate-label-color;
+
+
+      &.required {
+        &:before {
+          display: inline-block;
+          padding: 0 2px 0 0;
+          content: '*';
+          color: @rev-required-color;
+          font-weight: bold;
+        }
+      }
+
+
+    }
+
+    .rating-submit-btn {
+      padding: 5px 15px 8px 15px;
+      background: @rev-rating-submit-btn-bg;
+      font: @rev-rating-submit-btn-font;
+      border: @rev-rating-submit-btn-border;
+      color: @rev-rating-submit-btn-color;
+      .box-shadow(@rev-rating-submit-btn-bshadow);
+      &:hover {
+        background-color: darken(@rev-rating-submit-btn-bg,5%);
+      }
+    }
+
   }
-
-
-}
-
-.rating-submit-btn {
-padding: 5px 15px;
-background: #888;
-font: @rev-rating-submit-btn-font;
-color: #fff;
-}
-
-}
 
 
 
 /* ===============================================
     4. $[HELPER-CLASSES]
-================================================== */ 
+    ================================================== */ 
+
+    .single-review {
+  // display reviews in columns 
+  // add display-column to reviews-block
+  .reviews-block.display-column &{
+
+    float: left;
+    width: 31%;
+    padding: 2%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 1%;
+
+
+  }
+
+  &:after {
+   .reviews-block.display-column &{
+    top:auto;
+    bottom: 0;
+    .border-radius(50% 0 0 0);
+  }
+}
 
 // strips background in reviews
 // add striped-bg class to reviews-block
-.reviews-block.striped-bg {
-  .reviews {
-    .single-review {
-      &:nth-child(2n) {
-        background-color: darken(@rev-single-bgcolor,@rev-single-striped-power);
-
-      }
-    }
+&:nth-child(2n) {
+  .striped-bg & {
+    background-color: darken(@rev-single-bgcolor,@rev-single-striped-power);
   }
+}
+
 }
 
 
 
 /* ===============================================
     5. $[CUSTOM-STYLE] user custom style
-================================================== */
+    ================================================== */
 // add your style in reviews-custom.less
 
 
 
 /* ===============================================
     6. $[JQUERY-RATING] rating plugin styles
-================================================== */
-div.rating-cancel,div.star-rating{float:left;width:17px;height:15px;text-indent:-999em;cursor:pointer;display:block;background:transparent;overflow:hidden}
-div.rating-cancel,div.rating-cancel a{background:url(../images/delete.gif) no-repeat 0 -16px}
-div.star-rating,div.star-rating a{background:url(@rev-rating-start-img) no-repeat 0 0px}
-div.rating-cancel a,div.star-rating a{display:block;width:16px;height:100%;background-position:0 0px;border:0}
-div.star-rating-on a{background-position:0 -16px!important}
-div.star-rating-hover a{background-position:0 -32px}
-/* Read Only CSS */
-div.star-rating-readonly a{cursor:default !important}
-/* Partial Star CSS */
-div.star-rating{background:transparent!important;overflow:hidden!important}
+    ================================================== */
+    div.rating-cancel,div.star-rating{float:left;width:17px;height:15px;text-indent:-999em;cursor:pointer;display:block;background:transparent;overflow:hidden}
+    div.rating-cancel,div.rating-cancel a{background:url(../images/delete.gif) no-repeat 0 -16px}
+    div.star-rating,div.star-rating a{background:url(@rev-rating-start-img) no-repeat 0 0px}
+    div.rating-cancel a,div.star-rating a{display:block;width:16px;height:100%;background-position:0 0px;border:0}
+    div.star-rating-on a{background-position:0 -16px!important}
+    div.star-rating-hover a{background-position:0 -32px}
+    /* Read Only CSS */
+    div.star-rating-readonly a{cursor:default !important}
+    /* Partial Star CSS */
+    div.star-rating{background:transparent!important;overflow:hidden!important}
 
-div.rating-cancel {display: none !important;}
+    div.rating-cancel {display: none !important;}
 /* END jQuery.Rating Plugin CSS */
