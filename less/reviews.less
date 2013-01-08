@@ -66,6 +66,21 @@
       // input / textarea
       @rev-input-font-family: @rev-base-font-family;
 
+  // embed fonts ------------------------
+  
+  @font-face {
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+
+  font-family: 'FontAwesome';
+  src: url('../fonts/fontawesome-webfont.eot?') format('eot'), 
+       url('../fonts/fontawesome-webfont.woff') format('woff'), 
+       url('../fonts/fontawesome-webfont.ttf')  format('truetype'),
+       url('../fonts/fontawesome-webfont.svg#svgFontName') format('svg');
+  }
+
+
   // BLOCKS --------------------------------------
   @rev-block-padding: 20px;
   @rev-reviews-padding: 0;
@@ -77,6 +92,12 @@
       @rev-single-bgcolor: #f8f8f8;
       @rev-single-padding: 20px;
       @rev-single-striped-power: 3%;
+
+      // popup cotent placement
+      @rev-column-overlay-direction: bottom; // top | bottom
+      @rev-content-overlay-bshadow: 0 12px 5px -7px rgba(0,0,0,.35);
+      @rev-content-overlay-bgcolor: #444;
+      @rev-content-overlay-color: #fff;
 
         // review content
         @rev-content-max-width: 100%;
@@ -103,6 +124,10 @@
         @rev-rating-submit-btn-bg: #888;
         @rev-rating-submit-btn-color: #fff;
         @rev-rating-submit-btn-bshadow: ~"inset 0 -2px 0 rgba(0,0,0,.5), inset 0 -3px 2px -1px rgba(255,255,255,.8)";
+        @rev-rating-submit-btn-height: 27px + @rev-rating-submit-btn-fsize;
+        @rev-rating-submit-btn-fsize: 13px;
+        @rev-rating-submit-btn-icon-size: 25px;
+
 
 
   // THEME VARIABLES --------------------------------------
@@ -172,7 +197,21 @@
     body .reviews-block .reviews .single-review:after {
       display: none;
     }
+  }  
+
+  .rating-theme-init() when (@rev-column-overlay-direction = top)
+  {    
+    .display-column .single-review .review-content {
+      top: 0;
+    }
   }
+    .rating-theme-init() when (@rev-column-overlay-direction = bottom)
+  {    
+    .display-column .single-review .review-content {
+      bottom: 0;
+    }
+  }
+
 
 
   // RUN THEME INIT METHOD
@@ -249,7 +288,7 @@
     .review-rating {
       overflow: hidden;
 
-      .rating-stars {
+      .rating {
         width: 80px;
         height: 16px;
         background-color: #f00;
@@ -410,14 +449,33 @@
     }
 
     .rating-submit-btn {
-      padding: 5px 15px 8px 15px;
+      padding: 8px 15px 10px 15px;
       background: @rev-rating-submit-btn-bg;
+      height: @rev-rating-submit-btn-height;
       font: @rev-rating-submit-btn-font;
       border: @rev-rating-submit-btn-border;
       color: @rev-rating-submit-btn-color;
+      font-size: @rev-rating-submit-btn-fsize;
       .box-shadow(@rev-rating-submit-btn-bshadow);
       &:hover {
         background-color: darken(@rev-rating-submit-btn-bg,5%);
+      }
+
+      &.icon {
+        position: relative;
+        padding-right: 42px;
+        &:after {
+          font:normal @rev-rating-submit-btn-icon-size "FontAwesome";
+          line-height: @rev-rating-submit-btn-height+ 8px;
+          content: "\f0a9";
+          display: inline-block;
+          width: 32px;
+          height: @rev-rating-submit-btn-height + 8px;
+          position: absolute;
+          top: -6px;
+          right: 5px;
+        }
+
       }
     }
 
@@ -442,7 +500,56 @@
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     margin: 1%;
+   
 
+    .review-content {
+      display: none;
+      font-size: @rev-base-font-size - 2;
+      min-height: 100px;
+      overflow: hidden;
+      left: 0px;
+      z-index: 999;
+      color: @rev-content-overlay-color;
+      padding: 30px 20px;
+      position: absolute;
+      background-color: @rev-content-overlay-bgcolor;
+      cursor: default;
+
+
+      // quotes added 
+      &:after {
+        content: "\f10e";
+        font:normal 20px "FontAwesome";
+        display: block;
+        width: 32px;
+        height: @rev-rating-submit-btn-height + 8px;
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        color: #fff;
+      }  
+
+      &:before {
+        content: "\f10d";
+        font:normal 20px "FontAwesome";
+        display: block;
+        width: 32px;
+        height: @rev-rating-submit-btn-height + 8px;
+        position: absolute;
+        bottom: -25px;
+        right: -10px;
+        color: #fff;
+      }
+
+    }
+    
+    &:hover {
+      .review-content {
+        display: block;
+        height: auto;
+        .box-shadow(@rev-content-overlay-bshadow);
+      }
+    }
 
   }
 
