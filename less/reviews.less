@@ -67,19 +67,6 @@
       @rev-input-font-family: @rev-base-font-family;
 
   // ########## embed fonts ##########
-/*
-  @font-face {
-
-
-  font-family: 'FontAwesome';
-  src: url('../fonts/fontawesome-webfont.eot?') format('eot'), 
-       url('../fonts/fontawesome-webfont.eot?#iefix') format('eot'), 
-       url('../fonts/fontawesome-webfont.woff') format('woff'), 
-       url('../fonts/fontawesome-webfont.ttf')  format('truetype'),
-       url('../fonts/fontawesome-webfont.svg#svgFontName') format('svg');
-
-  }
-   */
 
 @font-face {
   font-family: 'FontAwesome';
@@ -527,8 +514,8 @@
     margin: 1%;
 
     .review-summary {
-      min-height: 35px;
-      max-height: 35px;
+      min-height: @rev-base-font-size * @rev-base-line-height * 2 - 5;
+      max-height: @rev-base-font-size * @rev-base-line-height * 2 - 5;
       overflow: hidden;
       font-size: @rev-base-font-size - 2px;
       line-height: @rev-base-line-height;

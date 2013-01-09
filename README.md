@@ -9,6 +9,7 @@ current version: 0.1.0
 ### Table of contents  
 1. **[Example](https://github.com/karolgorecki/generic-product-rev#example)**
 1. **[Requirements](https://github.com/karolgorecki/generic-product-rev#requirements)**
+1. **[Variables](https://github.com/karolgorecki/generic-product-rev#variables)**
 1. **[HTML Structure](https://github.com/karolgorecki/generic-product-rev#html-structure)**
 1. **[Cross-browser](https://github.com/karolgorecki/generic-product-rev#cross-browser)**
 1. **[TODO](https://github.com/karolgorecki/generic-product-rev#todo)**
@@ -18,9 +19,77 @@ current version: 0.1.0
 
 
 ## Requirements
-### Files
-[reviews.less](https://github.com/karolgorecki/generic-product-rev/blob/master/less/reviews.less)  
-[reviews-custom.less](https://github.com/karolgorecki/generic-product-rev/blob/master/less/reviews-custom.less) - to make custom style
+* **[reviews.less](https://github.com/karolgorecki/generic-product-rev/blob/master/less/reviews.less)**
+* **[reviews-custom.less](https://github.com/karolgorecki/generic-product-rev/blob/master/less/reviews-custom.less)** - to make custom style
+* **[Fonts](https://github.com/karolgorecki/generic-product-rev/tree/master/fonts)** - using Font Awesome
+* **[Images](https://github.com/karolgorecki/generic-product-rev/tree/master/images)** - for star rating
+* **[JQuery Rating](http://www.fyneworks.com/jquery/star-rating/)** - jquery rating script to enable rating
+* **[Less](http://lesscss.org/)**
+* **[Twitter Bootstrap](http://twitter.github.com/bootstrap/)**
+* **[JQuery library](http://code.jquery.com/jquery.min.js)**
+
+## Variables
+All variables starting with *@rev* prefix.
+#### Typography
+##### General
+* **@rev-base-font-family** - base font family for the blocks
+* **@rev-base-font-size** - base font size for the blocks. Used to calculate other default sizes.
+* **@rev-base-line-height** - base line height
+
+##### Review-block typography
+######Main title  
+* **@rev-main-title-color** - the main title color in *reviews-block* and *rating-block*  
+
+######Date  
+* **@rev-date-color** - color of posted on date
+
+######Author  
+* **@rev-author-color** - color of review author  
+
+######Summary  
+* **@rev-summary-color** - color of review summary  
+
+##### Rating-block typography
+######Subtitle
+* **@rev-sub-title-color** - subtitle color
+
+######Rating stars heading
+* **@rev-rating-heading-font** - font properties for rating stars heading
+* **@rev-rating-heading-color** - color for rating start heading
+
+######Rating labels
+* **@rev-rate-label-color** - color of label for star rating
+* **@rev-required-color** - color of the asterix in required inputs
+* **@rev-rate-label-font** - font properties for label star rating
+
+######Ratting submit button
+* **@rev-rating-submit-btn-font** - font properties for submit button
+
+######Inputs and textareas
+* **@rev-input-font-family** - font family for inputs and textareas
+
+#### Blocks
+##### Review-block
+######Single review
+* **@rev-single-bgcolor** - background color for single review row/col
+* **@rev-single-padding** - padding
+* **@rev-single-striped-power** - defines the darken value for striped bg
+
+######Review content overlay (.display-column)
+* **@rev-column-overlay-direction** - overlay vertical position (top/bottom)
+* **@rev-column-overlay-bshadow** - defines box shadow
+* **@rev-column-overlay-bgcolor** - background color for the overlay
+* **@rev-column-overlay-color** - text color in overlay
+
+######Review content
+* **@rev-content-max-width** - the max width of the review content box
+
+######Numbering counter
+* **@rev-numbering-size** - size of the number box
+* **@rev-numbering-bgcolor** - background color
+* **@rev-numbering-color** - font color of number
+
+#### Rating-block
 
 ## HTML Structure
 ### Reviews block
