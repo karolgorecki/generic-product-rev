@@ -31,7 +31,7 @@
   @rev-base-font-size: 16px;
   @rev-base-line-height: 1.25em;
 
-  // reviews section ------------------------
+  // ########## reviews section ##########
 
       // main-title
       @rev-main-title-color: #444;
@@ -46,7 +46,7 @@
       @rev-summary-color: #666;
 
 
-  // rating section ------------------------
+  // ########## rating section ##########
 
       // rate form sub title
       @rev-sub-title-color:  lighten(@rev-main-title-color,40%);
@@ -66,27 +66,39 @@
       // input / textarea
       @rev-input-font-family: @rev-base-font-family;
 
-  // embed fonts ------------------------
-  
+  // ########## embed fonts ##########
+/*
   @font-face {
-  font-weight: normal;
-  font-style: normal;
-  font-variant: normal;
+
 
   font-family: 'FontAwesome';
   src: url('../fonts/fontawesome-webfont.eot?') format('eot'), 
+       url('../fonts/fontawesome-webfont.eot?#iefix') format('eot'), 
        url('../fonts/fontawesome-webfont.woff') format('woff'), 
        url('../fonts/fontawesome-webfont.ttf')  format('truetype'),
        url('../fonts/fontawesome-webfont.svg#svgFontName') format('svg');
-  }
 
+  }
+   */
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/fontawesome-webfont.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/fontawesome-webfont.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/fontawesome-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/fontawesome-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+        font-weight: normal;
+        font-style: normal;
+        font-variant: normal;
+  }
 
   // BLOCKS --------------------------------------
   @rev-block-padding: 20px;
   @rev-reviews-padding: 0;
   @rev-space-gap: 10px;  
 
-    // reviews section ------------------------
+    // ########## reviews section ##########
 
       // single review
       @rev-single-bgcolor: #f8f8f8;
@@ -108,7 +120,7 @@
         @rev-numbering-color: #e0e0e0;
 
 
-    // rating section ------------------------   
+    // ########## rating section ##########   
 
         // rate
         @rev-rate-top-spacing: 20px;
@@ -145,6 +157,7 @@
       @rev-DATE: true;
       @rev-RATING: true;
       @rev-NUMBERING: true;
+      @rev-QUOTES: true;
 
   // methods for turning off elements
   .rating-theme-init() when (@rev-rating-theme = default)
@@ -209,6 +222,16 @@
   {    
     .display-column .single-review .review-content {
       bottom: 0;
+    }
+  }
+
+    .rating-theme-init() when (@rev-QUOTES = false)
+  {    
+    body .display-column .reviews .single-review .review-content {
+      padding: 20px;
+      &:before, &:after {
+        display: none;
+      }
     }
   }
 
@@ -337,6 +360,7 @@
 /* =============================================== 
     3. $[RATING-BLOCK]
 ================================================== */
+
     .rating-block {
      font: normal @rev-base-font-size~"/"@rev-base-line-height @rev-base-font-family;
      padding: @rev-block-padding;
@@ -464,16 +488,18 @@
       &.icon {
         position: relative;
         padding-right: 42px;
+        
         &:after {
           font:normal @rev-rating-submit-btn-icon-size "FontAwesome";
           line-height: @rev-rating-submit-btn-height+ 8px;
-          content: "\f0a9";
+          content: "\f058";
           display: inline-block;
           width: 32px;
           height: @rev-rating-submit-btn-height + 8px;
           position: absolute;
           top: -6px;
           right: 5px;
+
         }
 
       }
@@ -481,13 +507,12 @@
 
   }
 
-
-
 /* ===============================================
-    4. $[HELPER-CLASSES]
+    4. $[HELPER-CLASSES] - also state classes
 ================================================== */ 
 
     .single-review {
+      
   // display reviews in columns 
   // add display-column to reviews-block
   .reviews-block.display-column &{
@@ -500,11 +525,18 @@
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     margin: 1%;
-   
+
+    .review-summary {
+      min-height: 35px;
+      max-height: 35px;
+      overflow: hidden;
+      font-size: @rev-base-font-size - 2px;
+      line-height: @rev-base-line-height;
+    }
 
     .review-content {
       display: none;
-      font-size: @rev-base-font-size - 2;
+      font-size: @rev-base-font-size - 1;
       min-height: 100px;
       overflow: hidden;
       left: 0px;
@@ -514,12 +546,13 @@
       position: absolute;
       background-color: @rev-content-overlay-bgcolor;
       cursor: default;
-
+      text-align: center;
 
       // quotes added 
       &:after {
         content: "\f10e";
         font:normal 20px "FontAwesome";
+        text-align: left;
         display: block;
         width: 32px;
         height: @rev-rating-submit-btn-height + 8px;
@@ -530,6 +563,7 @@
       }  
 
       &:before {
+        text-align: left;
         content: "\f10d";
         font:normal 20px "FontAwesome";
         display: block;
@@ -540,6 +574,7 @@
         right: -10px;
         color: #fff;
       }
+    
 
     }
     
@@ -570,6 +605,7 @@
 }
 
 }
+
 
 
 
