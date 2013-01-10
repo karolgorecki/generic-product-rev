@@ -41,19 +41,33 @@ All variables starting with *@rev* prefix.
 ##### Review-block typography
 ######Main title  
 * **@rev-main-title-color** - the main title color in *reviews-block* and *rating-block*  
+* **@rev-main-title-font** - font of the main title in reviews and rating block
+
+#####Review content
+* **@rev-content-font** - review content font style
+* **@rev-content-font-column** - review content when reviews are displayed in columns
+* **@rev-content-align-column** - text align of review displayed in column
 
 ######Date  
 * **@rev-date-color** - color of posted on date
+* **@rev-date-font** - font of review-date
 
 ######Author  
 * **@rev-author-color** - color of review author  
+* **@rev-author-font** - font of review author
 
 ######Summary  
 * **@rev-summary-color** - color of review summary  
+* **@rev-summary-font** - review summary font style
+* **@rev-summary-font-column** - review summary font style when displayed in column
+
+######Numbering /counter
+* **@rev-numbering-font** - font style of the numbering at corner
 
 ##### Rating-block typography
 ######Subtitle
 * **@rev-sub-title-color** - subtitle color
+* **@rev-sub-title-font** -subtitle font style
 
 ######Rating stars heading
 * **@rev-rating-heading-font** - font properties for rating stars heading
@@ -66,9 +80,8 @@ All variables starting with *@rev* prefix.
 
 ######Ratting submit button
 * **@rev-rating-submit-btn-font** - font properties for submit button
-* **@rev-rating-submit-btn-fsize** - font size
 * **@rev-rating-submit-btn-color** - text color
-* 
+
 
 ######Inputs and textareas
 * **@rev-input-font-family** - font family for inputs and textareas
