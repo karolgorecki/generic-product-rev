@@ -168,6 +168,14 @@ To enable display icon in submit button add *icon* class to rating-submit-btn.
     <button type="submit" class="rating-submit-btn icon">
       Add Your Rating
     </button>
+    
+##### Required input
+
+To make an input required (asterix appear) just add to label class *required*
+
+    <label class="rate-label required" for="nickname_field">
+      Nickname
+    </label>
 
     
 ## HTML Structure
