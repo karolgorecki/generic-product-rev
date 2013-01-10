@@ -63,6 +63,7 @@ All variables starting with *@rev* prefix.
 
 ######Numbering /counter
 * **@rev-numbering-font** - font style of the numbering at corner
+* **@rev-numbering-color** - text color
 
 ##### Rating-block typography
 ######Subtitle
@@ -96,12 +97,13 @@ All variables starting with *@rev* prefix.
 
 ######Review content overlay (.display-column)
 * **@rev-column-overlay-direction** - overlay vertical position (top/bottom)
-* **@rev-column-overlay-bshadow** - defines box shadow
-* **@rev-column-overlay-bgcolor** - background color for the overlay
-* **@rev-column-overlay-color** - text color in overlay
+* **@rev-content-overlay-bshadow** - defines box shadow
+* **@rev-content-overlay-bgcolor** - background color for the overlay
+* **@rev-content-overlay-color** - text color in overlay
 
 ######Review content
 * **@rev-content-max-width** - the max width of the review content box
+* **@rev-content-padding** - padding of the review content box
 
 ######Numbering counter
 * **@rev-numbering-size** - size of the number box
