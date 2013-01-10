@@ -21,7 +21,7 @@ current version: 0.1.0
 
 ## Requirements
 * **[reviews.less](https://github.com/karolgorecki/generic-product-rev/blob/master/less/reviews.less)**
-* **[reviews-variables.less](https://github.com/karolgorecki/generic-product-rev/blob/master/less/review-variables.less)** - generic product review variables
+* **[reviews-variables.less](https://github.com/karolgorecki/generic-product-rev/blob/master/less/reviews-variables.less)** - generic product review variables
 * **[reviews-custom.less](https://github.com/karolgorecki/generic-product-rev/blob/master/less/reviews-custom.less)** - to make custom style
 * **[Fonts](https://github.com/karolgorecki/generic-product-rev/tree/master/fonts)** - using Font Awesome
 * **[Images](https://github.com/karolgorecki/generic-product-rev/tree/master/images)** - for star rating
