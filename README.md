@@ -47,7 +47,7 @@ All variables starting with *@rev* prefix.
 * **@rev-main-title-color** - the main title color in *reviews-block* and *rating-block*  
 * **@rev-main-title-font** - font of the main title in reviews and rating block
 
-#####Review content
+######Review content
 * **@rev-content-font** - review content font style
 * **@rev-content-font-column** - review content when reviews are displayed in columns
 * **@rev-content-align-column** - text align of review displayed in column
