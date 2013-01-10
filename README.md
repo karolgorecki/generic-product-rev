@@ -190,7 +190,13 @@ To set value of the star rating use *data-rating*. Remember to set the same valu
   <span itemprop="ratingValue">2</span>
 </div>
 ```
-    
+
+##### Textareas & Input sizes
+We can use size classes: *xsmall, small, medium, large, xlarge*
+```html
+<input id="summary_field" class="large" type="text" placeholder="Summary of Your Review..." name="title" />
+```
+
 ## HTML Structure
 ### Reviews block
 ``` html
