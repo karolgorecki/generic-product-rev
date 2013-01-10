@@ -122,9 +122,7 @@
      padding: @rev-block-padding;
 
      .main-title {
-      font-weight: bold;
-      font-size: @rev-base-font-size+10;
-      line-height: @rev-base-line-height;
+      font: @rev-main-title-font;
       color: @rev-main-title-color;
     }
 
@@ -143,7 +141,7 @@
       display: block;
       content: counter(reviews-no);
       position: absolute;
-      font-weight: bold;
+      font: @rev-numbering-font;
       top: 0;
       right: 0;
       width: @rev-numbering-size;
@@ -158,24 +156,23 @@
     }
 
     .review-summary {
-      font-weight: bold;
+      font: @rev-summary-font;
       color: @rev-summary-color;
     }
 
     .review-author {
-      font-style: italic;
-      font-size: @rev-base-font-size - 2;
+      font: @rev-author-font;
       color: @rev-author-color;
     }
 
     .review-content {
-      padding: 5px 0 0 0;
-      font-size: @rev-base-font-size - 1;
+      padding: @rev-content-padding;
+      font: @rev-content-font;
       max-width: @rev-content-max-width;
     }
 
     .review-date {
-      font-size: @rev-base-font-size - 4;
+      font: @rev-date-font;
       color: @rev-date-color;
     }
 
@@ -237,15 +234,12 @@
      padding: @rev-block-padding;
 
      .main-title {
-      font-weight: bold;
-      font-size: @rev-base-font-size+10;
-      line-height: @rev-base-line-height;
+      font: @rev-main-title-font;
       color: @rev-main-title-color;
     }
 
     .sub-title {
-      font-size: @rev-base-font-size+1;
-      line-height: @rev-base-line-height - .25;
+      font: @rev-sub-title-font;
       color: @rev-sub-title-color;
     }
 
@@ -277,22 +271,33 @@
       border: @rev-rate-input-border;
       background-color: @rev-rate-bgcolor;
       #gradient > .vertical(darken(@rev-rate-bgcolor,3%),@rev-rate-bgcolor);
+      width: 200px;
+      max-width: 100%;
 
       &.xsmall {
-
+        width: 70px;
+        max-width: 100%;
       }
       &.small {
-
+        width: 140px;
+        max-width: 100%;
       }
       &.medium {
-
+        width: 200px;
+        max-width: 100%;
       }
       &.large {
         width: 280px;
         max-width: 100%;
       }
       &.xlarge {
+        width: 380px;
+        max-width: 100%;
+      }
 
+      &:focus {
+      background-color: darken(@rev-rate-bgcolor,3%);
+      #gradient > .vertical(darken(@rev-rate-bgcolor,6%),darken(@rev-rate-bgcolor,3%));
       }
     }
 
@@ -302,9 +307,28 @@
 
     textarea {
       padding: @rev-rate-textarea-padding;
+        min-height:150px;
+
+      &.xsmall {
+        min-height: 50px;
+      }
+
+      &.small {
+        min-height: 100px;
+      }
+
+      &.medium {
+        min-height: 150px;
+      }
+
       &.large {
         min-height:200px;
       }
+
+      &.xlarge {
+        min-height: 250px;
+      }
+
     }
 
     .rating-box-label {
@@ -401,13 +425,12 @@
       min-height: @rev-base-font-size * @rev-base-line-height * 2 - 5;
       max-height: @rev-base-font-size * @rev-base-line-height * 2 - 5;
       overflow: hidden;
-      font-size: @rev-base-font-size - 2px;
-      line-height: @rev-base-line-height;
+      font: @rev-summary-font-column;
     }
 
     .review-content {
       display: none;
-      font-size: @rev-base-font-size - 1;
+      font: @rev-content-font-column;
       min-height: 100px;
       overflow: hidden;
       left: 0px;
@@ -417,7 +440,7 @@
       position: absolute;
       background-color: @rev-content-overlay-bgcolor;
       cursor: default;
-      text-align: center;
+      text-align: @rev-content-align-column;
 
       // quotes added 
       &:after {

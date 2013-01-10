@@ -23,21 +23,35 @@
 
       // main-title
       @rev-main-title-color: #444;
+      @rev-main-title-font: bold  @rev-base-font-size+10~"/"@rev-base-line-height @rev-base-font-family;
 
-      // review typo
+      // review content
+      @rev-content-font: normal @rev-base-font-size - 1~"/"@rev-base-line-height + 0.15 @rev-base-font-family;
+      @rev-content-font-column: normal @rev-base-font-size - 2~"/"@rev-base-line-height + 0.2 @rev-base-font-family;
+      @rev-content-align-column: center;
+
+      // review date
       @rev-date-color: #666;
+      @rev-date-font: normal @rev-base-font-size - 4~"/"@rev-base-line-height + 0.25 @rev-base-font-family;
 
       // review author
       @rev-author-color: #555;
+      @rev-author-font: italic @rev-base-font-size - 2 @rev-base-font-family;
 
       // review summary
       @rev-summary-color: #666;
+      @rev-summary-font: bold @rev-base-font-size @rev-base-font-family;
+      @rev-summary-font-column: bold @rev-base-font-size - 2 @rev-base-font-family;
+
+      //numbering / counter
+      @rev-numbering-font: bold @rev-base-font-size @rev-base-font-family;
 
 
   // ########## rating section ##########
 
       // rate form sub title
       @rev-sub-title-color:  lighten(@rev-main-title-color,40%);
+      @rev-sub-title-font: normal @rev-base-font-size + 1 ~"/" @rev-base-line-height - 0.25 @rev-base-font-family;
 
       // rate heading
       @rev-rating-heading-font: bold @rev-base-font-size @rev-base-font-family;
@@ -88,6 +102,7 @@
 
         // review content
         @rev-content-max-width: 100%;
+        @rev-content-padding: 5px 0 0 0;
 
         // numbering
         @rev-numbering-size: 32px;
