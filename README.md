@@ -31,6 +31,7 @@ current version: 0.1.0
 * **[JQuery library](http://code.jquery.com/jquery.min.js)**
 
 ## Variables
+![https://raw.github.com/karolgorecki/generic-product-rev/master/docs_img/rat-block.gif](https://raw.github.com/karolgorecki/generic-product-rev/master/docs_img/rat-block.gif)
 All variables starting with *@rev* prefix.
 #### Typography
 ##### General
