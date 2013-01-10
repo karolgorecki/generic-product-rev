@@ -146,18 +146,18 @@ All variables starting with *@rev* prefix.
 
 Example  
 This will hide the *review-author* block  
-
-    @rev-AUTHOR: false;
-
+```less
+@rev-AUTHOR: false;
+```
 ## Display options
 ##### Striped background
 ![https://raw.github.com/karolgorecki/generic-product-rev/master/docs_img/striped.gif](https://raw.github.com/karolgorecki/generic-product-rev/master/docs_img/striped.gif)
 Just add *striped-bg* class to reviews-block, to darken background of every second single-review block.
-
-    <div class="reviews-block striped-bg">
-      ...
-    </div>
-    
+```html
+<div class="reviews-block striped-bg">
+  ...
+</div>
+```    
 ##### Display reviews in columns
 ![https://raw.github.com/karolgorecki/generic-product-rev/master/docs_img/col.gif](https://raw.github.com/karolgorecki/generic-product-rev/master/docs_img/col.gif)
 To display single-review in column add *display-column* to reviews-block.
