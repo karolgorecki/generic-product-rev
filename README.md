@@ -10,6 +10,7 @@ current version: 0.1.0
 1. **[Example](https://github.com/karolgorecki/generic-product-rev#example)**
 1. **[Requirements](https://github.com/karolgorecki/generic-product-rev#requirements)**
 1. **[Variables](https://github.com/karolgorecki/generic-product-rev#variables)**
+1. **[Display options](https://github.com/karolgorecki/generic-product-rev#display-options)**
 1. **[HTML Structure](https://github.com/karolgorecki/generic-product-rev#html-structure)**
 1. **[Cross-browser](https://github.com/karolgorecki/generic-product-rev#cross-browser)**
 1. **[TODO](https://github.com/karolgorecki/generic-product-rev#todo)**
@@ -64,9 +65,13 @@ All variables starting with *@rev* prefix.
 
 ######Ratting submit button
 * **@rev-rating-submit-btn-font** - font properties for submit button
+* **@rev-rating-submit-btn-fsize** - font size
+* **@rev-rating-submit-btn-color** - text color
+* 
 
 ######Inputs and textareas
 * **@rev-input-font-family** - font family for inputs and textareas
+* **@rev-rate-input-color** - inside input and textarea text color
 
 #### Blocks
 ##### Review-block
@@ -89,8 +94,66 @@ All variables starting with *@rev* prefix.
 * **@rev-numbering-bgcolor** - background color
 * **@rev-numbering-color** - font color of number
 
-#### Rating-block
+##### Rating-block
+######Rating inputs textareas
+* **@rev-rate-top-spacing** - the space between elements such as inputs, textareas (li padding top)
+* **@rev-rate-input-padding** - input padding
+* **@rev-rate-textarea-padding** - textarea padding
+* **@rev-rate-input-box-shadow** - box shadow of inputs, textareas
+* **@rev-rate-bgcolor** - background color (will be used for creating gradient)
+* **@rev-rate-input-border** - border properites for inputs and textareas
 
+######Submit rating button
+* **@rev-rating-submit-btn-border** - border properties for submit button
+* **@rev-rating-submit-btn-bg** - background color
+* **@rev-rating-submit-btn-bshadow** - box shadow
+* **@rev-rating-submit-btn-height** - height of the button
+* **@rev-rating-submit-btn-icon-size** - size of the icon
+
+#### Theme Variables
+* **@rev-rating-theme** - can be used to switch theme
+
+#### Turn on/off elements
+######To hide element just add *false* value.
+* **@rev-SUMMARY**
+* **@rev-AUTHOR**
+* **@rev-CONTENT**
+* **@rev-DATE**
+* **@rev-RATING**
+* **@rev-NUMBERING**
+* **@rev-QUOTES**
+
+Example  
+This will hide the *review-author* block  
+
+    @rev-AUTHOR: false;
+
+## Display options
+##### Striped background
+
+Just add *striped-bg* class to reviews-block, to darken background of every second single-review block.
+
+    <div class="reviews-block striped-bg">
+      ...
+    </div>
+    
+##### Display reviews in columns
+
+To display single-review in column add *display-column* to reviews-block.
+
+    <div class="reviews-block display-column">
+      ...
+    </div>
+    
+##### Enable icon in submit button
+
+To enable display icon in submit button add *icon* class to rating-submit-btn.
+
+    <button type="submit" class="rating-submit-btn icon">
+      Add Your Rating
+    </button>
+
+    
 ## HTML Structure
 ### Reviews block
 ``` html
@@ -191,7 +254,3 @@ All variables starting with *@rev* prefix.
 Works on modern browsers, IE7+
 
 ## TODO
-* write documentation
-* test in all browser's
-* add more vars
-* add more configuration options

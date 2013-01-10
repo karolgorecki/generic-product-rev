@@ -1,0 +1,135 @@
+/**
+ * Generic product reviews & rating
+ *
+ * @category design
+ * @author Karol Górecki <kgorecki@nexway.com>
+ * @package base_default
+ *
+ * version 0.1.0
+ *
+ */
+
+/* ===============================================
+   VARIABLES
+================================================== */
+  // all variables have @rev prefix
+
+  // TYPOGRAPHY --------------------------------------
+  @rev-base-font-family: arial;
+  @rev-base-font-size: 16px;
+  @rev-base-line-height: 1.25em;
+
+  // ########## reviews section ##########
+
+      // main-title
+      @rev-main-title-color: #444;
+
+      // review typo
+      @rev-date-color: #666;
+
+      // review author
+      @rev-author-color: #555;
+
+      // review summary
+      @rev-summary-color: #666;
+
+
+  // ########## rating section ##########
+
+      // rate form sub title
+      @rev-sub-title-color:  lighten(@rev-main-title-color,40%);
+
+      // rate heading
+      @rev-rating-heading-font: bold @rev-base-font-size @rev-base-font-family;
+      @rev-rating-heading-color: #555;
+
+      // rate labels 
+      @rev-rate-label-color: @rev-summary-color;
+      @rev-required-color: #d33;
+      @rev-rate-label-font: bold @rev-base-font-size - 3 ~"/"@rev-base-line-height + .15 @rev-base-font-family;
+
+      // rating submit button
+      @rev-rating-submit-btn-font: bold 13px arial;
+
+      // input / textarea
+      @rev-input-font-family: @rev-base-font-family;
+
+  // ########## embed fonts ##########
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/fontawesome-webfont.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/fontawesome-webfont.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/fontawesome-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/fontawesome-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+        font-weight: normal;
+        font-style: normal;
+        font-variant: normal;
+  }
+
+  // BLOCKS --------------------------------------
+  @rev-block-padding: 20px;
+  @rev-reviews-padding: 0;
+  @rev-space-gap: 10px;  
+
+    // ########## reviews section ##########
+
+      // single review
+      @rev-single-bgcolor: #f8f8f8;
+      @rev-single-padding: 20px;
+      @rev-single-striped-power: 3%;
+
+      // popup cotent placement
+      @rev-column-overlay-direction: bottom; // top | bottom
+      @rev-content-overlay-bshadow: 0 12px 5px -7px rgba(0,0,0,.35);
+      @rev-content-overlay-bgcolor: #444;
+      @rev-content-overlay-color: #fff;
+
+        // review content
+        @rev-content-max-width: 100%;
+
+        // numbering
+        @rev-numbering-size: 32px;
+        @rev-numbering-bgcolor: #fff;
+        @rev-numbering-color: #e0e0e0;
+
+
+    // ########## rating section ##########   
+
+        // rate
+        @rev-rate-top-spacing: 20px;
+        @rev-rate-input-padding: 7px 10px;
+        @rev-rate-textarea-padding: 10px;
+        @rev-rate-input-color: #555;
+        @rev-rate-input-box-shadow: inset 0px 1px 2px rgba(0,0,0,.15);
+        @rev-rate-bgcolor: #f9f9f9;
+        @rev-rate-input-border: 1px solid #ccc;
+
+        // submit button
+        @rev-rating-submit-btn-border: 1px solid lighten(@rev-rating-submit-btn-bg,10%);
+        @rev-rating-submit-btn-bg: #888;
+        @rev-rating-submit-btn-color: #fff;
+        @rev-rating-submit-btn-bshadow: ~"inset 0 -2px 0 rgba(0,0,0,.5), inset 0 -3px 2px -1px rgba(255,255,255,.8)";
+        @rev-rating-submit-btn-height: 27px + @rev-rating-submit-btn-fsize;
+        @rev-rating-submit-btn-fsize: 13px;
+        @rev-rating-submit-btn-icon-size: 25px;
+
+
+
+  // THEME VARIABLES --------------------------------------
+  
+      // default star rating theme
+      @rev-rating-theme: default; // values: default | blue
+
+
+  // TURN OFF ELEMENTS --------------------------------------
+
+      //enable disable elements
+      @rev-SUMMARY: true;
+      @rev-AUTHOR: true;
+      @rev-CONTENT: true;
+      @rev-DATE: true;
+      @rev-RATING: true;
+      @rev-NUMBERING: true;
+      @rev-QUOTES: true;
