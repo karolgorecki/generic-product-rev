@@ -108,7 +108,6 @@ All variables starting with *@rev* prefix.
 ######Numbering counter
 * **@rev-numbering-size** - size of the number box
 * **@rev-numbering-bgcolor** - background color
-* **@rev-numbering-color** - font color of number
 
 ##### Rating-block
 ######Rating inputs textareas
@@ -124,6 +123,7 @@ All variables starting with *@rev* prefix.
 * **@rev-rating-submit-btn-bg** - background color
 * **@rev-rating-submit-btn-bshadow** - box shadow
 * **@rev-rating-submit-btn-height** - height of the button
+* **@rev-rating-submit-btn-fsize** - font size of text
 * **@rev-rating-submit-btn-icon-size** - size of the icon
 
 #### Theme Variables
