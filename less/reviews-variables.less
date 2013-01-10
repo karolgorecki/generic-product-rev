@@ -45,6 +45,7 @@
 
       //numbering / counter
       @rev-numbering-font: bold @rev-base-font-size @rev-base-font-family;
+      @rev-numbering-color: #e0e0e0;
 
 
   // ########## rating section ##########
@@ -64,9 +65,11 @@
 
       // rating submit button
       @rev-rating-submit-btn-font: bold 13px arial;
+      @rev-rating-submit-btn-color: #fff;
 
       // input / textarea
       @rev-input-font-family: @rev-base-font-family;
+      @rev-rate-input-color: #555;
 
   // ########## embed fonts ##########
 
@@ -107,7 +110,6 @@
         // numbering
         @rev-numbering-size: 32px;
         @rev-numbering-bgcolor: #fff;
-        @rev-numbering-color: #e0e0e0;
 
 
     // ########## rating section ##########   
@@ -116,7 +118,6 @@
         @rev-rate-top-spacing: 20px;
         @rev-rate-input-padding: 7px 10px;
         @rev-rate-textarea-padding: 10px;
-        @rev-rate-input-color: #555;
         @rev-rate-input-box-shadow: inset 0px 1px 2px rgba(0,0,0,.15);
         @rev-rate-bgcolor: #f9f9f9;
         @rev-rate-input-border: 1px solid #ccc;
@@ -124,7 +125,6 @@
         // submit button
         @rev-rating-submit-btn-border: 1px solid lighten(@rev-rating-submit-btn-bg,10%);
         @rev-rating-submit-btn-bg: #888;
-        @rev-rating-submit-btn-color: #fff;
         @rev-rating-submit-btn-bshadow: ~"inset 0 -2px 0 rgba(0,0,0,.5), inset 0 -3px 2px -1px rgba(255,255,255,.8)";
         @rev-rating-submit-btn-height: 27px + @rev-rating-submit-btn-fsize;
         @rev-rating-submit-btn-fsize: 13px;
