@@ -184,7 +184,7 @@ To make an label have required state (asterix appear) just add to label class *r
 ```
 ## Misc
 ##### Using star rating
-To set value of the star rating use *data-rating*
+To set value of the star rating use *data-rating*. Remember to set the same value to the span.
 ```html
 <div class="rating" data-rating="2" title="Quality">
   <span itemprop="ratingValue">2</span>
