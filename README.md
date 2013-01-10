@@ -175,7 +175,7 @@ To enable display icon in submit button add *icon* class to rating-submit-btn.
     
 ##### Required input
 ![https://raw.github.com/karolgorecki/generic-product-rev/master/docs_img/req.gif](https://raw.github.com/karolgorecki/generic-product-rev/master/docs_img/req.gif)
-To make an input required (asterix appear) just add to label class *required*
+To make an label have required state (asterix appear) just add to label class *required*
 
     <label class="rate-label required" for="nickname_field">
       Nickname
