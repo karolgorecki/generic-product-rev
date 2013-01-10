@@ -11,6 +11,7 @@ current version: 0.1.0
 1. **[Requirements](https://github.com/karolgorecki/generic-product-rev#requirements)**
 1. **[Variables](https://github.com/karolgorecki/generic-product-rev#variables)**
 1. **[Display options](https://github.com/karolgorecki/generic-product-rev#display-options)**
+1. **[Misc](https://github.com/karolgorecki/generic-product-rev#misc)**
 1. **[HTML Structure](https://github.com/karolgorecki/generic-product-rev#html-structure)**
 1. **[Cross-browser](https://github.com/karolgorecki/generic-product-rev#cross-browser)**
 1. **[TODO](https://github.com/karolgorecki/generic-product-rev#todo)**
@@ -160,27 +161,35 @@ Just add *striped-bg* class to reviews-block, to darken background of every seco
 ##### Display reviews in columns
 ![https://raw.github.com/karolgorecki/generic-product-rev/master/docs_img/col.gif](https://raw.github.com/karolgorecki/generic-product-rev/master/docs_img/col.gif)
 To display single-review in column add *display-column* to reviews-block.
-
-    <div class="reviews-block display-column">
-      ...
-    </div>
-    
+```html
+<div class="reviews-block display-column">
+  ...
+</div>
+```    
 ##### Enable icon in submit button
 ![https://raw.github.com/karolgorecki/generic-product-rev/master/docs_img/btn.gif](https://raw.github.com/karolgorecki/generic-product-rev/master/docs_img/btn.gif)
 To enable display icon in submit button add *icon* class to rating-submit-btn.
-
-    <button type="submit" class="rating-submit-btn icon">
-      Add Your Rating
-    </button>
-    
+```html
+<button type="submit" class="rating-submit-btn icon">
+  Add Your Rating
+</button>
+```    
 ##### Required input
 ![https://raw.github.com/karolgorecki/generic-product-rev/master/docs_img/req.gif](https://raw.github.com/karolgorecki/generic-product-rev/master/docs_img/req.gif)
 To make an label have required state (asterix appear) just add to label class *required*
-
-    <label class="rate-label required" for="nickname_field">
-      Nickname
-    </label>
-
+```html
+<label class="rate-label required" for="nickname_field">
+  Nickname
+</label>
+```
+## Misc
+##### Using star rating
+To set value of the star rating use *data-rating*
+```html
+<div class="rating" data-rating="2" title="Quality">
+  <span itemprop="ratingValue">2</span>
+</div>
+```
     
 ## HTML Structure
 ### Reviews block
