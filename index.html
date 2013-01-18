@@ -242,13 +242,16 @@
 </div>
 </div>
 
+	<script src="js/jquery.js" type="text/javascript"></script>
+	<script src='js/jquery.rating.js' type="text/javascript" language="javascript"></script>
+
 
 <script type="text/javascript">
 // toggler ;)
 (function(){
-	$('.toggler').on('click',function(){
+	jQuery('.toggler').on('click',function(){
 
-		$("."+$(this).data("where")).toggleClass($(this).text());
+		jQuery("."+jQuery(this).data("where")).toggleClass(jQuery(this).text());
 
 	});
 
