@@ -26,6 +26,8 @@
     		<hr />
     		<!-- <a href="#" class="toggler" data-where="whichElementShouldGetTheClass">TheClass</a> -->
 
+
+
     		<div class="row">
     			<div class="span12"><h1>Generic product reviews &amp; rating</h1></div>
     		</div>
@@ -240,22 +242,18 @@
 </div>
 </div>
 
-	<script src="js/jquery.js" type="text/javascript"></script>
+	<script src="http://code.jquery.com/jquery-1.7.2.min.js" type="text/javascript"></script>
 	<script src='js/jquery.rating.js' type="text/javascript" language="javascript"></script>
 	<script src='js/jquery.MetaData.js' type="text/javascript" language="javascript"></script>
 
+	<script type="text/javascript">
 
-<script type="text/javascript">
-// toggler ;)
-(function(){
-	$('.toggler').on('click',function(){
-
-		$("."+$(this).data("where")).toggleClass($(this).text());
-
+	$(function(){
+						$('.toggler').click(function(){
+							$("." + $(this).data("where")).toggleClass($(this).text());
+				});
 	});
-
-})();
-</script>
+	</script>
 
 </body>
 </html>
