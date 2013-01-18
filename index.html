@@ -204,10 +204,10 @@
 							<div class="rating-box-label">Your rating:</div>
 							<div class="rating-box">
 								<input id="Quality_1" name="ratings[1]" type="radio" title="Worst" value="1" class="star"/>
-								<input id="Quality_2" name="ratings[1]" type="radio" title="Bad" value="2"class="star"/>
-								<input id="Quality_3" name="ratings[1]" type="radio" title="OK" value="3"class="star"/>
-								<input id="Quality_4" name="ratings[1]" type="radio" title="Good" value="4"class="star"/>
-								<input id="Quality_5" name="ratings[1]" type="radio" title="Best" value="5"class="star"/>
+								<input id="Quality_2" name="ratings[1]" type="radio" title="Bad" value="2" class="star"/>
+								<input id="Quality_3" name="ratings[1]" type="radio" title="OK" value="3" class="star"/>
+								<input id="Quality_4" name="ratings[1]" type="radio" title="Good" value="4" class="star"/>
+								<input id="Quality_5" name="ratings[1]" type="radio" title="Best" value="5" class="star"/>
 							</div>
 
 						</li><!-- End Star rating -->
@@ -247,9 +247,9 @@
 <script type="text/javascript">
 // toggler ;)
 (function(){
-	jQuery('.toggler').on('click',function(){
+	$('.toggler').on('click',function(){
 
-		jQuery("."+jQuery(this).data("where")).toggleClass(jQuery(this).text());
+		$("."+$(this).data("where")).toggleClass($(this).text());
 
 	});
 
